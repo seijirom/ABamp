@@ -1,0 +1,57 @@
+* C:\amp_ab\haruna_ab_tb.asc
+V1 N001 0 3.3
+C1 N003 out 1000u
+V2 in 0 SINE({vin_dc+voff} 0.1 1k) AC 1 0
+Xamp N002 in N001 out haruna_ab
+C3 N002 0 100u
+RL N003 0 8
+V3 N002 0 {vin_dc}
+
+* block symbol definitions
+.subckt haruna_ab cap_g signal_in Vdd out
+M24 N006 in_ N010 0 nch l=4u w=8u ad={2u*8u} as={2u*8u} pd={4u+8u} ps={4u+8u}
+M23 N007 signal_in N010 0 nch l=4u w=8u ad={2u*8u} as={2u*8u} pd={4u+8u} ps={4u+8u}
+M25 N010 N011 0 0 nch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u} m=2
+M22 N003 N002 Vdd Vdd pch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M21 N002 N002 Vdd Vdd pch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M7 N005 N003 Vdd Vdd pch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u} m=2
+M9 N013 N011 0 0 nch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u} m=2
+M27 N011 N011 0 0 nch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M2 out N013 0 0 nch l=1u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u} m={np}
+M3 N004 N004 Vdd Vdd pch l=1u w=20u ad={2u*20u} as={2u*20u} pd={4u+20u} ps={4u+20u} m=64
+M12 N012 N012 0 0 nch l=1u w=20u ad={2u*20u} as={2u*20u} pd={4u+20u} ps={4u+20u} m=64
+M11 N008 N008 N012 0 nch l=4u w=20u ad={2u*20u} as={2u*20u} pd={4u+20u} ps={4u+20u}
+M8 N005 N008 N013 0 nch l=4u w=20u ad={2u*20u} as={2u*20u} pd={4u+20u} ps={4u+20u}
+M6 N013 N009 N005 N005 pch l=4u w=20u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M4 N009 N009 N004 N004 pch l=4u w=20u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M1 out N005 Vdd Vdd pch l=1u w=280u ad={2u*280u} as={2u*280u} pd={4u+280u} ps={4u+280u} m={np}
+M5 N009 N011 0 0 nch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M26 N001 N001 Vdd Vdd pch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+M10 N008 N001 Vdd Vdd pch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+R2 in_ cap_g 10k
+R1 out in_ 110k
+R11 Vdd signal_in 20k
+R12 signal_in 0 20k
+R22 Vdd N011 121k
+M13 N001 N011 0 0 nch l=4u w=80u ad={2u*80u} as={2u*80u} pd={4u+80u} ps={4u+80u}
+C1 N005 N006 {cc}
+M14 N003 in_ N006 0 nch l=4u w=8u ad={2u*8u} as={2u*8u} pd={4u+8u} ps={4u+8u}
+M15 N002 signal_in N007 0 nch l=4u w=8u ad={2u*8u} as={2u*8u} pd={4u+8u} ps={4u+8u}
+.ends haruna_ab
+
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\h_s_i\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 30m
+*.include "./models/OR1_mos"
+;ac dec 100 1 100MEG
+* .step param cc 2p 8p 2p
+.param cc=10p
+* .step param np 300 600 100?
+.param np=100
+.param vin_dc=1.65
+* .step param voff _0.1 0.1 0.025
+.param voff=0
+.meas TRAN A MAX V(n003)
+.backanno
+.end

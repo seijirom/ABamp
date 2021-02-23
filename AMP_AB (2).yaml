@@ -1,0 +1,5 @@
+---
+target: AMP_AB (2)
+reference: AMP_AB (2)_reference.cir
+netlist: C:/amp_ab/haruna_ab_tb.net
+schematic: C:/amp_ab/haruna_ab_tb.asc

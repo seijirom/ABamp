@@ -1,0 +1,22 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -112 -56 112 56
+WINDOW 0 0 -56 Bottom 2
+PIN -112 32 LEFT 8
+PINATTR PinName cap_g
+PINATTR SpiceOrder 1
+PIN -112 0 LEFT 8
+PINATTR PinName signal_in
+PINATTR SpiceOrder 2
+PIN -112 -32 LEFT 8
+PINATTR PinName Vdd
+PINATTR SpiceOrder 3
+PIN 112 0 RIGHT 8
+PINATTR PinName out
+PINATTR SpiceOrder 4
+PIN 112 -32 RIGHT 8
+PINATTR PinName Vdd_p
+PINATTR SpiceOrder 5
+PIN 112 32 RIGHT 8
+PINATTR PinName Vss_p
+PINATTR SpiceOrder 6
