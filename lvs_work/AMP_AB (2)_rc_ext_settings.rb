@@ -1,5 +1,5 @@
 def rc_ext_settings
-  same_circuits 'amp_ab', 'HARUNA_AB'
+  same_circuits 'amp_ab', 'HARUNA_AB_'
   align
   same_device_classes 'HRES', 'RES'
   same_device_classes 'RES', 'RES'

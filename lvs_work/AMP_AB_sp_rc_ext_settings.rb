@@ -1,5 +1,5 @@
 def rc_ext_settings
-  same_circuits 'amp_ab', 'HARUNA_AB'
+  same_circuits 'amp_ab', 'HARUNA_AB_'
   align
   same_device_classes 'HRES', 'RES'
   same_device_classes 'RES', 'RES'
@@ -10,6 +10,7 @@ def rc_ext_settings
   netlist.flatten_circuit 'Pch*'
   netlist.flatten_circuit 'R_poly*'
   netlist.flatten_circuit 'HR_poly*'
+  netlist.make_top_level_pins
   netlist.combine_devices
   schematic.combine_devices
 end

@@ -1,4 +1,4 @@
-Circuit: * C:\amp_ab\haruna_ab_tb_.asc
+Circuit: * Z:\home\seijirom\work\2021_9\ABamp\haruna_ab_tb_.asc
 
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -21,24 +21,24 @@ Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-a: MAX(v(n003))=1.1952 FROM 0 TO 0.03
+a: MAX(v(n003))=1.19515 FROM 0 TO 0.03
 
 
-Date: Thu Jan 14 13:11:23 2021
-Total elapsed time: 1.490 seconds.
+Date: Thu Sep 02 00:10:12 2021
+Total elapsed time: 3.318 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 60008
-traniter = 59476
-tranpoints = 27630
-accept = 18511
-rejected = 9119
+totiter = 60170
+traniter = 59638
+tranpoints = 27676
+accept = 18553
+rejected = 9123
 matrix size = 22
 fillins = 16
 solver = Normal
-Thread vector: 13.9/8.5[2] 2.8/2.3[2] 1.3/1.9[1] 0.2/1.0[1]  2592/500
-Matrix Compiler1: 2.87 KB object code size  0.6/0.3/[0.2]
-Matrix Compiler2: 2.46 KB object code size  0.3/0.4/[0.3]
+Thread vector: 43.3/26.8[2] 6.0/4.5[2] 2.3/2.7[1] 0.5/18.8[1]  2592/500
+Matrix Compiler1: 2.87 KB object code size  0.9/0.5/[0.3]
+Matrix Compiler2: 2.46 KB object code size  1.9/1.0/[0.5]
 
