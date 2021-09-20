@@ -1,5 +1,0 @@
----
-target: AMP_AB_sp
-reference: AMP_AB_sp_reference.cir
-netlist: "/home/seijirom/work/2021_9/ABamp/haruna_ab_tb_.net"
-schematic: "/home/seijirom/work/2021_9/ABamp/haruna_ab_tb_.asc"
